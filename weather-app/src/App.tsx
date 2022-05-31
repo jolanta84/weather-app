@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
+import Footer from "./components/Footer/Footer";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -73,6 +74,7 @@ const App: React.FC = () => {
             />
           </Routes>
         </Grid>
+        <Footer />
       </BrowserRouter>
     </div>
   );

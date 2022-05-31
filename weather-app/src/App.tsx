@@ -1,13 +1,14 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import React, { useEffect, useState } from 'react'; 
 import axios from "axios";
-import  {Weather}  from "./models/weather";
+import  {Weather, weatherDefault}  from "./models/weather";
 
 const App: React.FC = () => {
   const [city, setCity] = useState("");
-  const [weather, setWeather] = useState<Weather>();
+  const [weatherData, setWeatherData] = useState<Weather>(weatherDefault);
 
   console.log('App.tsx start');
 
@@ -25,7 +26,10 @@ const App: React.FC = () => {
         .get(`${API_URL}weather?q=${city}&appid=${API_KEY}&units=metric&lang=pl`)
         .then((res) => {
           console.log(res.data);
-          setWeather(res.data.weather[0]);
+          setWeatherData(res.data.weather[0]);
+          
+          // setWeatherData(res.data.weather);
+         
           console.log(res.data);
           
        
@@ -40,6 +44,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
       <Search setCity={setCity}  />
+      <CurrentWeather city={city}   weatherData={weatherData}/>
     </div>
   );
 };

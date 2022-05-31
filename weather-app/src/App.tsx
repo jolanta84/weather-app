@@ -10,14 +10,14 @@ import {
   weatherDefault,
   temperatureDefault,
 } from "./models/types";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<Weather>(weatherDefault);
   const [temperatureData, setTemperatureData] =
     useState<Temperature>(temperatureDefault);
-
-  // const [isFetching, setIsFetching] = useState(true);
+  const [isFetching, setIsFetching] = useState<Boolean>(true);
 
   // https://api.openweathermap.org/data/2.5/weather?q=glwice&appid=0f49db41c8ba9fd435696694d7607902&units=metric&lang=pl
 
@@ -33,21 +33,36 @@ const App: React.FC = () => {
         .then((res) => {
           setWeatherData(res.data.weather[0]);
           setTemperatureData(res.data.main);
+          setIsFetching(false);
 
           console.log(res.data);
-
-          // setIsFetching(false);
         })
         .catch((error) => console.log("Error"));
-      // }
     }
   }, [city]);
 
   return (
     <div className="App">
-      <Header />
-      <Search setCity={setCity} />
-      <CurrentWeather city={city} weatherData={weatherData} temperatureData={temperatureData} />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Search setCity={setCity} />
+                {!isFetching && (
+
+                <CurrentWeather
+                  city={city}
+                  weatherData={weatherData}
+                  temperatureData={temperatureData}
+                                  />)}
+              </>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

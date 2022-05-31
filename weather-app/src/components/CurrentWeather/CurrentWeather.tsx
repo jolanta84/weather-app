@@ -16,11 +16,8 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
     setToggle(!toggle);
   };
   return (
-    <div
-      style={{
-        visibility: props.city === "" ? "hidden" : "visible",
-      }}
-    ><div>
+    <>
+      <div>
       <h2>{props.city.toString()}</h2>
       <p>{props.weatherData.main}</p>
       <p>{props.weatherData.description}</p>
@@ -44,7 +41,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
   <WeatherDetails temperatureData={props.temperatureData} />
   {/* <WeatherDetails /> */}
       </div>
-    </div>
+    </>
   );
 };
 

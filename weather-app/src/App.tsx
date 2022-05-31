@@ -10,6 +10,7 @@ import {
   weatherDefault,
   temperatureDefault,
 } from "./models/types";
+import Grid from "@mui/material/Grid";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -44,24 +45,34 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Search setCity={setCity} />
-                {!isFetching && (
-
-                <CurrentWeather
-                  city={city}
-                  weatherData={weatherData}
-                  temperatureData={temperatureData}
-                                  />)}
-              </>
-            }
-          />
-        </Routes>
+        <Grid container spacing={10}>
+          <Grid item xs={12}>
+            <Header />
+          </Grid>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Grid item xs={12} m={10}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} >
+                      <Search setCity={setCity} />
+                    </Grid>
+                    {!isFetching && (
+                      <Grid item xs={12}>
+                        <CurrentWeather
+                          city={city}
+                          weatherData={weatherData}
+                          temperatureData={temperatureData}
+                        />
+                      </Grid>
+                    )}
+                  </Grid>
+                </Grid>
+              }
+            />
+          </Routes>
+        </Grid>
       </BrowserRouter>
     </div>
   );

@@ -1,11 +1,7 @@
 
 import React, { useState } from "react";
-
-import {
-  Weather,
-  Temperature,
-} from "E:/sda-project-weather-app/weather-app/weather-app/src/models/types";
-// import {Weather} from ".././models/types";
+import WeatherDetails from "../../components/WeatherDetails/WeatherDetails"
+import {Weather, Temperature} from "../../models/types";
 
 interface CurrentWeatherProps {
   city: string;
@@ -29,11 +25,11 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
       <p>{props.weatherData.main}</p>
       <p>{props.weatherData.description}</p>
       <p>{props.weatherData.icon}</p>
-      <p>{props.temperatureData.temp}</p>
+      {/* <p>{props.temperatureData.temp}</p>
       <p>{props.temperatureData.feels_like}</p>
       <p>{props.temperatureData.humidity}</p>
       <p>{props.temperatureData.temp_max}</p>
-      <p>{props.temperatureData.temp_min}</p>
+      <p>{props.temperatureData.temp_min}</p> */}
   <button
         
           onClick={handleClick}
@@ -45,7 +41,8 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
           visibility: toggle === true ? "visible" : "hidden",
         }}
       >
-     Dane
+  <WeatherDetails temperatureData={props.temperatureData} />
+  {/* <WeatherDetails /> */}
       </div>
     </div>
   );

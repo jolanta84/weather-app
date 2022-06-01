@@ -30,7 +30,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
     justifyContent="center"
    >
       <Grid item xs={12}>
-        <Card sx={{ width: 400 }}>
+        <Card sx={{ width: 400, border: "1px solid grey"}}>
           <CardMedia
             component="img"
             height="200"

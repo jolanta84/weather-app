@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WeatherDetails from "../../components/WeatherDetails/WeatherDetails";
-import { Weather, Temperature } from "../../models/types";
+import { Weather, Temperature, Coordinate } from "../../models/types";
 import Button from "@mui/material/Button/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -21,10 +21,11 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
   const handleClick = () => {
     setToggle(!toggle);
   };
+  
   return (
     <Grid 
     container
-    spacing={0}
+    spacing={10}
     direction="column"
     alignItems="center"
     justifyContent="center"
@@ -54,13 +55,13 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
           </CardActions></Card>
       </Grid>
 
-      <div
+      <Grid m={5}
         style={{
           visibility: toggle === true ? "visible" : "hidden",
         }}
       >
         <WeatherDetails temperatureData={props.temperatureData} />
-      </div>
+      </Grid>
     </Grid>
   );
 };

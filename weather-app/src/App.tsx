@@ -8,17 +8,22 @@ import axios from "axios";
 import {
   Weather,
   Temperature,
+  Coordinate,
   weatherDefault,
   temperatureDefault,
 } from "./models/types";
 import Grid from "@mui/material/Grid";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { coordinatesDefault } from './models/types';
+import AboutUs from "./components/AboutUs/AboutUs";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 const App: React.FC = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<Weather>(weatherDefault);
   const [temperatureData, setTemperatureData] =
     useState<Temperature>(temperatureDefault);
+
   const [isFetching, setIsFetching] = useState<Boolean>(true);
 
   // https://api.openweathermap.org/data/2.5/weather?q=glwice&appid=0f49db41c8ba9fd435696694d7607902&units=metric&lang=pl
@@ -35,9 +40,10 @@ const App: React.FC = () => {
         .then((res) => {
           setWeatherData(res.data.weather[0]);
           setTemperatureData(res.data.main);
+     
           setIsFetching(false);
 
-          console.log(res.data);
+         
         })
         .catch((error) => console.log("Error"));
     }
@@ -60,11 +66,12 @@ const App: React.FC = () => {
                       <Search setCity={setCity} />
                     </Grid>
                     {!isFetching && (
-                      <Grid item xs={12}>
+                      <Grid item xs={12} m={5}>
                         <CurrentWeather
                           city={city}
                           weatherData={weatherData}
                           temperatureData={temperatureData}
+                         
                         />
                       </Grid>
                     )}
@@ -72,7 +79,18 @@ const App: React.FC = () => {
                 </Grid>
               }
             />
+              <Route
+              path="/about"
+              element={
+                <Grid item xs={12}>
+                  <AboutUs />{" "}
+                </Grid>
+              }
+            />
+              
+                <Route path="*" element={<Grid item xs={12}><PageNotFound /></Grid>} />
           </Routes>
+          
         </Grid>
         <Footer />
       </BrowserRouter>

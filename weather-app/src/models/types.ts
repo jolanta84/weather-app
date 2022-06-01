@@ -13,11 +13,17 @@ export interface Temperature {
   temp_min: number | undefined;
 }
 
+
 export interface Weather {
   id: number | undefined;
   main: string | undefined;
   description: string | undefined;
   icon: string | undefined;
+}
+export interface Coordinate {
+  lot: number | undefined;
+  lon: number | undefined;
+
 }
 
 export const temperatureDefault = {
@@ -34,4 +40,9 @@ export const weatherDefault = {
   description: undefined,
   icon: undefined,
 };
+
+export const coordinatesDefault ={
+  lot: undefined,
+  lon: undefined
+}
 

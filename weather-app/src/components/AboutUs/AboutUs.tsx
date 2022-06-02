@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button/Button";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 
 const AboutUs = () => {
   return (
@@ -46,12 +47,14 @@ const AboutUs = () => {
         is constantly being lost to space, creating what is essentially a very
         thin atmosphere throughout the Solar System. The movement of mass
         ejected from the Sun is known as the solar wind.
-      </Grid>
-      <Button variant="outlined">
-        <Link href="/" underline="none" color="inherit">
-          {"Check weather"}
-        </Link>
-      </Button>
+      </Grid> 
+      <Typography align="center">
+        <Button variant="outlined">
+          <Link href="/" underline="none" color="inherit">
+            {"Check weather"}
+          </Link>
+        </Button>
+      </Typography>
     </>
   );
 };

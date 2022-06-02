@@ -1,6 +1,5 @@
 import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button/Button";
 import Toolbar from "@mui/material/Toolbar";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import Link from '@mui/material/Link';

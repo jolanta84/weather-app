@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WeatherDetails from "../../components/WeatherDetails/WeatherDetails";
-import { Weather, Temperature, Coordinate } from "../../models/types";
+import { Weather, Temperature } from "../../models/types";
 import Button from "@mui/material/Button/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -18,14 +18,14 @@ interface CurrentWeatherProps {
 const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
   const [toggle, setToggle] = useState<boolean>(false);
 
-  const handleClick = () => {
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     setToggle(!toggle);
   };
   
   return (
     <Grid 
     container
-    spacing={10}
+    spacing={5}
     direction="column"
     alignItems="center"
     justifyContent="center"
@@ -37,14 +37,14 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
             height="200"
             image={`http://openweathermap.org/img/wn/${props.weatherData.icon}@2x.png`}
             alt="weather icon"
-            sx={{ bgcolor: "primary.main" }}
+            sx={{ bgcolor: "secondary.main" }}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {props.city.toString()}
             </Typography>
             <hr />
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" align="center">
             {props.weatherData.description}
   </Typography>
           </CardContent>
@@ -55,7 +55,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
           </CardActions></Card>
       </Grid>
 
-      <Grid m={5}
+      <Grid mt={5}
         style={{
           visibility: toggle === true ? "visible" : "hidden",
         }}

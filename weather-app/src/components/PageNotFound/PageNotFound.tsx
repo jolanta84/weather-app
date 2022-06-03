@@ -1,4 +1,4 @@
-import Typography from "@mui/material/Typography/Typography";
+import {Typography} from "@mui/material";
 
 const PageNotFound: React.FC = () => {
   return (

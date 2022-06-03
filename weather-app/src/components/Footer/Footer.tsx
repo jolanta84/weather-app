@@ -22,9 +22,7 @@ const Footer: React.FC = () => {
             color="inherit"
             underline="none"
             href="mailto:jolanta.pisulska@gmail.com"
-          >
-            Jolanta Pisulska
-          </Link>{" "}
+          >Jolanta Pisulska</Link>{" "}
           {new Date().getFullYear()}
         </Typography>
       </Container>

@@ -1,7 +1,7 @@
-import Button from "@mui/material/Button/Button";
-import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
-import Typography from "@mui/material/Typography";
+import {Button} from "@mui/material";
+import {Grid} from "@mui/material";
+import {Link} from "@mui/material";
+import {Typography} from "@mui/material";
 
 const AboutUs = () => {
   return (
@@ -9,8 +9,8 @@ const AboutUs = () => {
       <Grid item xs={12} m={10}>
         Weather is the state of the atmosphere, describing for example the
         degree to which it is hot or cold, wet or dry, calm or stormy, clear or
-        cloudy.[1] On Earth, most weather phenomena occur in the lowest layer of
-        the planet's atmosphere, the troposphere,[2][3] just below the
+        cloudy. On Earth, most weather phenomena occur in the lowest layer of
+        the planet's atmosphere, the troposphere, just below the
         stratosphere. Weather refers to day-to-day temperature, precipitation,
         and other atmospheric conditions, whereas climate is the term for the
         averaging of atmospheric conditions over longer periods of time.[4] When

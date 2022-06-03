@@ -1,4 +1,3 @@
-
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -12,7 +11,7 @@ const Footer: React.FC = () => {
         py: 3,
         px: 2,
         bgcolor: "primary.main",
-        color: "white"
+        color: "white",
       }}
     >
       <Container maxWidth="sm">
@@ -22,7 +21,9 @@ const Footer: React.FC = () => {
             color="inherit"
             underline="none"
             href="mailto:jolanta.pisulska@gmail.com"
-          >Jolanta Pisulska</Link>{" "}
+          >
+            Jolanta Pisulska
+          </Link>{" "}
           {new Date().getFullYear()}
         </Typography>
       </Container>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Temperature } from "../../models/types";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableContainer from "@mui/material/TableContainer";
-import Paper from "@mui/material/Paper";
+import { TableRow } from "@mui/material";
+import { TableCell } from "@mui/material";
+import { TableHead } from "@mui/material";
+import { Table } from "@mui/material";
+import { TableBody } from "@mui/material";
+import { TableContainer } from "@mui/material";
+import { Paper } from "@mui/material";
 
 const WeatherDetails: React.FC<{ temperatureData: Temperature }> = (props) => {
   return (

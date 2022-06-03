@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import AboutUs from "./AboutUs";
 
 
-describe("Header component", () => {
-  test("checking if weather app is rendered", () => {
+describe("About Us component", () => {
+  test("checking if button is rendered", () => {
     render(<AboutUs />);
     const button= screen.getByRole('button');
     expect(button).toBeInTheDocument();

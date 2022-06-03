@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import Footer from "./Footer";
 
 
-describe("Header component", () => {
-    test("checking if weather app is rendered", () => {
+describe("Footer component", () => {
+    test("checking if Copyright © is rendered", () => {
         render(<Footer/>);
         const h1Element = screen.getByText(/Copyright © /i);
         expect(h1Element).toBeInTheDocument();

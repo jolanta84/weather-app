@@ -1,10 +1,10 @@
-import {Typography} from "@mui/material";
+import { Typography } from "@mui/material";
 
 const PageNotFound: React.FC = () => {
   return (
-   
-      <Typography variant="h3" align="center">404 | This page could not be found</Typography>
-   
+    <Typography variant="h3" align="center">
+      404 | This page could not be found
+    </Typography>
   );
 };
 

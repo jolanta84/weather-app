@@ -21,17 +21,17 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     setToggle(!toggle);
   };
-  
+
   return (
-    <Grid 
-    container
-    spacing={5}
-    direction="column"
-    alignItems="center"
-    justifyContent="center"
-   >
+    <Grid
+      container
+      spacing={5}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+    >
       <Grid item xs={12}>
-        <Card sx={{ width: 400, border: "1px solid grey"}}>
+        <Card sx={{ width: 400, border: "1px solid grey" }}>
           <CardMedia
             component="img"
             height="200"
@@ -45,17 +45,18 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
             </Typography>
             <hr />
             <Typography variant="body2" color="text.secondary" align="center">
-            {props.weatherData.description}
-  </Typography>
+              {props.weatherData.description}
+            </Typography>
           </CardContent>
-          <CardActions> 
-        <Button variant="outlined" onClick={handleClick}>
-          {toggle === true ? "Hide details" : "More details"}
-        </Button>
-          </CardActions></Card>
+          <CardActions>
+            <Button variant="outlined" onClick={handleClick}>
+              {toggle === true ? "Hide details" : "More details"}
+            </Button>
+          </CardActions>
+        </Card>
       </Grid>
-
-      <Grid mt={5}
+      <Grid
+        mt={5}
         style={{
           visibility: toggle === true ? "visible" : "hidden",
         }}
@@ -67,5 +68,3 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = (props) => {
 };
 
 export default CurrentWeather;
-
-

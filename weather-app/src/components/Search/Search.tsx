@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 import { useForm } from "react-hook-form";
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import { useState, useRef } from "react";
-import {Typography }from "@mui/material";
+import { Typography } from "@mui/material";
 
-import {Grid} from "@mui/material";
-import {TextField} from "@mui/material";
-
+import { Grid } from "@mui/material";
+import { TextField } from "@mui/material";
 
 const Search: React.FC<{ setCity: (city: string) => void }> = (props) => {
   const [inputState, setInputState] = useState<Boolean>(false);
@@ -17,7 +16,6 @@ const Search: React.FC<{ setCity: (city: string) => void }> = (props) => {
     formState: { errors },
   } = useForm();
 
-   
   const inputRef = useRef<null | HTMLInputElement>(null);
 
   const inputChangeHandler = (
@@ -28,11 +26,10 @@ const Search: React.FC<{ setCity: (city: string) => void }> = (props) => {
     } else setInputState(false);
   };
 
-  const formHandler = (data: {[city: string]: any }): void => {
-      console.log(data);
+  const formHandler = (data: { [city: string]: any }): void => {
+    console.log(data);
     props.setCity(data.city);
   };
-
 
   return (
     <form onSubmit={handleSubmit(formHandler)}>
@@ -58,7 +55,6 @@ const Search: React.FC<{ setCity: (city: string) => void }> = (props) => {
             sx={{ input: { textAlign: "center" } }}
           />
         </Grid>
-        
         <Grid item xs={12}>
           <Button type="submit" variant="contained" disabled={!inputState}>
             Search

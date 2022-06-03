@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import axios from "axios";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+describe("App component", () => {
+  test("should fetch weather data", () => {
+    const weatherData = [
+      { main: "Clouds", description: "zachmurzenie małe", icon: "03d" },
+    ];
+    const res = { data: weatherData };
+    mockedAxios.get.mockResolvedValue(res as any);
+  });
 });

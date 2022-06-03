@@ -1,10 +1,11 @@
+import React from 'react';
 import { useForm } from "react-hook-form";
-import Button from "@mui/material/Button/Button";
+import {Button} from "@mui/material";
 import { useState, useRef } from "react";
-import Typography from "@mui/material/Typography/Typography";
+import {Typography }from "@mui/material";
 
-import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField/TextField";
+import {Grid} from "@mui/material";
+import {TextField} from "@mui/material";
 
 
 const Search: React.FC<{ setCity: (city: string) => void }> = (props) => {
@@ -51,12 +52,13 @@ const Search: React.FC<{ setCity: (city: string) => void }> = (props) => {
             inputRef={inputRef}
             onChange={inputChangeHandler}
             variant="outlined"
-            placeholder="enter the city"
+            placeholder="Enter the city"
             inputProps={{ style: { textAlign: "center" } }}
             helperText={errors.city?.type === "required" ? "Enter city" : ""}
             sx={{ input: { textAlign: "center" } }}
           />
         </Grid>
+        
         <Grid item xs={12}>
           <Button type="submit" variant="contained" disabled={!inputState}>
             Search

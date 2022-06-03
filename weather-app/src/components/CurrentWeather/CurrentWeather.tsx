@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherDetails from "../../components/WeatherDetails/WeatherDetails";
+import WeatherDetails from "../WeatherDetails/WeatherDetails";
 import { Weather, Temperature } from "../../models/types";
 import Button from "@mui/material/Button/Button";
 import Card from "@mui/material/Card";

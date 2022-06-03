@@ -62,9 +62,11 @@ const App: React.FC = () => {
           setTemperatureData(res.data.main);
           setIsFetching(false);
         })
-        .catch((error) => console.log("Error"));
-    }
+        .catch((error) => {throw error});
+     }
   }, [city]);
+
+
 
   return (
     <Card className="App">
